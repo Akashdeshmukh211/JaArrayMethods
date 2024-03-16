@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array Methods</h1>
+</body>
+<script>
+// Javascrip All Array methods in details
+    
+//  otString() it returns a string with array values separated by commas
+// and it does not chnage the original array
+// examples
+let bikes = ["yamaha", "bajaja", "honda", "tvs"]
+console.log(bikes.toString())
+
+// The join returns a new string by concatenating all of the elements in an array
+// separated by commas or a specified separator string
+
+console.log(bikes.join())
+
+console.log(bikes.join(" "))
+
+console.log(bikes.join("-"))
+
+// The pop() method removes the laste element of an array and return removed element
+
+let popValue = bikes.pop()
+console.log(popValue)
+
+// The push() adds new items to the end of an array and its changes the length of the array
+
+bikes.push("Ducatti", "Royal Enfield")
+console.log(bikes)
+
+// The shift emoves first element adn returs it.
+
+let shiftValue = bikes.shift()
+console.log(shiftValue)
+
+// The unshift adds element or item to beginning and return new array length
+
+bikes.unshift("BMW", "Kawasaki")
+console.log(bikes)
+
+
+// Array elements can be deleted using the javascript operator delete 
+// Using Delete leaves undefined holes in the array
+
+let fruits = ['bananas', "Apple", "grappes"]
+delete fruits[1]
+
+console.log(fruits);
+
+// The concat() method concatenates (joins two) or more array. return a new array containning the joind array
+let newArray = bikes.concat(fruits)
+console.log(newArray)
+
+// The sort() sorts the elements of an array and overwrite the original array
+// Sorts the elements as strings in alphabetical and ascending order.
+
+// array.sort()
+
+let arr = [1,2,34,5,3]
+let str = ['a','c','d','b']
+arr.sort()
+console.log(arr)
+
+str.sort()
+console.log(str)
+
+// The splice() method adds and/or removers array element
+// The splice() method overwrites the original array
+// array.splice(index, howwany, item1,..., itemx)
+
+let arry = [99,3,45,56]
+arry.splice(1,2,"q","w","e") 
+console.log(arry)
+
+// The slice() slices out a piece from an array it creates a new array
+// array.slice(start, end)
+let numbers = [1,2,3,4,5];
+let num2 = numbers.slice(0,3)
+console.log(num2)
+
+// The reverse() method reverses the order of the elements in a array
+// This method overwrites the original array
+numbers.reverse()
+console.log(numbers)
+
+// The isArray method returns true if an object is an array otherwise false
+// check if an object is an array.
+// Array.isArray(obj)
+
+console.log(Array.isArray(numbers))
+
+// The indexOf() method returns the first index position of a specified value. returs -1 if the value in not
+// found and it searches for left to right
+
+// Negative start values counst for the laste element
+
+// array.indexOf(item, start)
+
+console.log(numbers.indexOf(2,3))
+console.log(numbers.indexOf(10,0))
+
+//The lastIndexOf() method returns the last index of a specified value.
+// returns -1 if the value is not found. starts at a specified index and searches from right to left
+
+let element = ["laptop","mobile", "HeadSet","mobile", "router"]
+console.log(element.lastIndexOf("laptop"))
+console.log(element.lastIndexOf("Laptop"))
+console.log(element.lastIndexOf("mobile"))
+
+
+// The find() method returns the fist element in the provided array that satisfies the provided testing function
+// if no value satisfy the testing function, undefined is returned.
+
+let array = [1,2,4,3,5]
+const found = array.find((element) => element < 10)
+console.log(found)
+
+// The findIndex() method returns the index of the first element in an array that satisfies the provided testing function. if no elements
+// satisfy the testing function, then -1 is returned.
+
+let value = array.findIndex((e)=> e > 2)
+console.log(value)
+
+// The includes() method returs true if an array contains a specified value.(sace sensitive)
+
+// if the value is not found returns false
+
+console.log(array.includes(2))
+console.log(array.includes(12))
+
+// The entries() method returs an array lterator object with key/value pairs. And this method does not 
+// change the original array
+
+const days = ["sun","mon","tue","wed","thu","fir", "sat"]
+
+const day = days.entries()
+console.log(day)
+
+for (let x of day) {
+    console.log(x)
+}   
+
+// The every method tests whether all elements is the array pass the test implemented by the provided function. it returns a boolean value
+
+let array1 = [2,4,5,7,83,5,6,8]
+
+let res = array1.every((e)=> e >= 2)
+console.log(res)
+
+
+// The some() method tests whether at least one element in the array passes the test implemented by the provided function
+// It returs true if in the array. it finds an element for which the provided function returns true: otherwise it
+// returs false. it doesnot modify the array
+
+
+</script>
+
+
+</html>
