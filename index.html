@@ -159,7 +159,78 @@ console.log(res)
 // The some() method tests whether at least one element in the array passes the test implemented by the provided function
 // It returs true if in the array. it finds an element for which the provided function returns true: otherwise it
 // returs false. it doesnot modify the array
+// array.some(function(value,index,arr){})
 
+const age = [23,43,24,12,15];
+console.log(age.some(checkAdule))
+function checkAdule(age) {
+        return  age > 18
+    }
+console.log(age)
+
+// The fill method fils specified element in an array with a value method overwrite the original array
+//start and end position can be specified if not all elements will be filled
+
+let furit = ["bannan","apple", "orange"]
+furit.fill("kiwi")
+console.log(furit)
+
+
+// The copyWithn() method copies array element to another position in the array, and the method overwrites the existing value
+// The copyWithin() method does not add items to the array
+// array.copyWithn(target,start,end)
+
+const f = ["bannan","apple", "orange"]
+console.log(f.copyWithin(1,0))
+
+// The valueOf method returs the array itself and this method does not change the original array.
+// array.valueOf();
+const myf = f.valueOf()
+console.log(myf)
+
+// The forEach() method executes a provided function once for each array element. and this method is not executed for empty element.
+// array.forEach((currentValue,index,arr)=>{})
+let number = [1,2,3,4,5,6,7]
+number.forEach((e,i,arr)=>{
+    console.log(e,"e")
+    console.log(i,"i")
+    console.log(arr,"arr")
+
+})
+
+
+// The filter() method creates a new array filled with elements that pass a test provided by a function
+
+let newNum = number.filter((e,i,arr)=>{
+    return e > 4
+})
+console.log(newNum,"newNum")
+
+// The reduce() method executes a reduces function for array element and this method returs a single value the functions accumulated result
+
+// array.reduce(function(total, currentValue, currentIndex, arr){})
+
+let reduseArr = number.reduce((t,c1,ci,arr)=>{
+    console.log(t);
+    console.log(c1);
+    console.log(ci);
+    console.log(arr);
+    return t - c1
+})
+console.log(reduseArr);
+
+// The reduceRight() method executes a reducer function for array element. and this method returs a single value the function accumulated result
+let reduseArr2 = number.reduceRight((t,c1,ci,arr)=>{
+    return t - c1
+})
+console.log(reduseArr2);
+
+// The Array.from() method returs an array from any object with a length property.
+// And this method returns an array from any iterable object
+// Array.from(object, mapFunction,thisValue)
+
+let str1 = "code"
+console.log(Array.from(str1))
 
 </script>
 
